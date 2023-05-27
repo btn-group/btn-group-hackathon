@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  root "listings#index"
+  root 'listings#index'
 end
