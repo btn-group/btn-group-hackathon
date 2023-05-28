@@ -3,7 +3,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '3.2.1'
+
+# Provides Haml generators for Rails 4 etc
+gem 'haml-rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.5'
@@ -45,9 +48,7 @@ gem 'bootsnap', require: false
 # gem "sassc-rails"
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
-
+  gem 'haml_lint', require: false
   # A Ruby static code analyzer and formatter, based on the community Ruby style guide.
   gem 'rubocop', require: false
   gem 'rubocop-performance'
