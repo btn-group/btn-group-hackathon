@@ -17,6 +17,19 @@
       global = globalThis
     = javascript_include_tag 'application', defer: true
   %body.h-100.d-flex.flex-column
+    %header.d-flex.container-fluid.align-items-stretch.justify-content-between.py-3
+      .d-flex.align-items-center
+        .fs-5.text-white Escrow Demo
+      .d-flex.align-items-stretch.justify-content-between
+        .block
+          .ms-1.ms-lg-3.d-none#wallet-toggle
+            .d-flex.cursor-pointer
+              %img.user-address-alias-avatar.h-100.symbol{ alt: 'avatar', src: 'https://res.cloudinary.com/hv5cxagki/image/upload/v1636593640/branding/btn_purple_background_dh2guy.png' }
+              .ms-3
+                .account-name.fw-bolder.fs-5
+                .account-address-abbreviated.fw-semibold.text-muted.fs-6
+          .ms-1.ms-lg-3
+            = render 'polkadot_connect_button'
     = yield
     %footer.footer.mt-auto
       .container-fluid.py-3
