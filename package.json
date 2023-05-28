@@ -5,6 +5,7 @@
   "author": "Lucy Berwick",
   "license": "MIT",
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.2.3",
     "esbuild": "^0.14.23",
     "esbuild-rails": "^1.0.5",
