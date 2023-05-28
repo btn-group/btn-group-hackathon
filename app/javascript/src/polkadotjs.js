@@ -117,18 +117,28 @@ export const POLKADOTJS = {
       account
     ) {
       $("#polkadot-account-list .list").append(
-        `<li class='bg-hover-light p-0' data-account-address= '${
+        `<li class='p-0' data-account-address= '${
           account.address
         }', data-account-name= '${account.meta.name}', data-account-source= '${
           account.meta.source
-        }'><a href='#' class='d-flex align-items-center'><div class='h-40px w-40px text-center me-3'><img class="h-100" src='https://res.cloudinary.com/hv5cxagki/image/upload/c_pad,dpr_2,f_auto,h_25,w_25,q_100/v1/${HELPERS.walletCloudinaryPublicId(
+        }'><a href='#' class='d-flex align-items-center'><div class='text-center me-3' style='width: 40px; height: 40px;'><img class="h-100" src='https://res.cloudinary.com/hv5cxagki/image/upload/c_pad,dpr_2,f_auto,h_25,w_25,q_100/v1/${HELPERS.walletCloudinaryPublicId(
           account.meta.source
-        )}'></div><div class="d-block"><div class="fw-bold text-gray-900">${
+        )}'></div><div class="d-block"><div class="fw-bold text-light">${
           account.meta.name
-        }</div><div class="fs-4 text-muted fw-semibold"><div class="lh-base">${
+        }</div><div class="text-muted"><div class="lh-base">${
           account.address
         }</div></div></div>`
       );
+      if (accounts.length) {
+        $("#change-account-link").removeClass("d-none");
+      } else {
+        $("#change-account-link").addClass("d-none");
+      }
+      // Enable clicking change button
+      $("#change-account-link").click(function (e) {
+        e.preventDefault();
+        $("#polkadot-account-list").modal("show");
+      });
     });
   },
   listenForAccountSelect: function (scope) {
@@ -139,7 +149,3 @@ export const POLKADOTJS = {
     });
   },
 };
-
-$(document).ready(function () {
-  POLKADOTJS.activatePolkadotjsExtension();
-});
