@@ -13,5 +13,4 @@ foreman start --procfile Procfile.dev
 bundle exec haml-lint app/views/
 bundle exec rubocop -A
 yarn prettier --write app/javascript/
-yarn prettier --write node_assets/
 ```
