@@ -6,6 +6,7 @@ import * as bootstrap from "bootstrap";
 import "./src/lodash";
 import "./src/polkadotjs";
 import "./src/toastr";
+import "./src/datatables";
 
 // LISTINGS
 import "./src/listings/index";
