@@ -86,6 +86,7 @@ GEM
     crass (1.0.6)
     date (3.3.3)
     erubi (1.12.0)
+    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
     haml (6.1.1)
@@ -105,9 +106,6 @@ GEM
       sysexits (~> 1.1)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
-    importmap-rails (1.1.6)
-      actionpack (>= 6.0.0)
-      railties (>= 6.0.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -211,6 +209,14 @@ GEM
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.9.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -222,17 +228,11 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stimulus-rails (1.2.1)
-      railties (>= 6.0.0)
     sysexits (1.2.0)
     temple (0.10.2)
     thor (1.2.2)
     tilt (2.1.0)
     timeout (0.3.2)
-    turbo-rails (1.4.0)
-      actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
-      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
@@ -261,7 +261,6 @@ DEPENDENCIES
   capybara
   haml-rails
   haml_lint
-  importmap-rails
   jbuilder
   puma (~> 5.0)
   rails (~> 7.0.5)
@@ -270,10 +269,9 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  sassc-rails
   selenium-webdriver
   sprockets-rails
-  stimulus-rails
-  turbo-rails
   tzinfo-data
   web-console
   webdrivers
@@ -282,4 +280,4 @@ RUBY VERSION
    ruby 3.2.1p31
 
 BUNDLED WITH
-   2.1.2
+   2.4.13
