@@ -5,13 +5,21 @@
   "author": "Lucy Berwick",
   "license": "MIT",
   "dependencies": {
+    "@polkadot/api": "^10.7.2",
+    "@polkadot/api-contract": "^10.7.2",
+    "@polkadot/extension-dapp": "^0.46.3",
+    "@polkadot/util": "^12.2.1",
     "@popperjs/core": "^2.11.8",
+    "@scio-labs/use-inkathon": "^0.0.1-alpha.42",
     "bootstrap": "^5.2.3",
     "esbuild": "^0.14.23",
     "esbuild-rails": "^1.0.5",
     "jquery": "^3.7.0",
     "prettier": "^2.8.8",
-    "sass": "^1.49.9"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.49.9",
+    "toastr": "^2.1.4"
   },
   "scripts": {
     "build": "node esbuild.config.js --platform=node",
