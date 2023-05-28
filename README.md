@@ -1,5 +1,13 @@
 # Escrow on Aleph Zero demo
 
+## Setup
+
+### Development
+In separate terminal windows:
+```
+foreman start --procfile Procfile.dev
+```
+
 ## Checking code
 ```
 bundle exec haml-lint app/views/

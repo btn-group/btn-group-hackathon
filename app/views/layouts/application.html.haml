@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title Escrow Demo | btn.group
+    %meta{ charset: 'utf-8' }
+    %link{ href: 'https://res.cloudinary.com/hv5cxagki/image/upload/c_scale,dpr_2,f_auto,h_15,q_auto/v1/logos/btn_purple_background_uu2ere', rel: 'shortcut icon' }
+    %meta{ name: 'description', content: 'Escrow demo on Aleph Zero by btn.group' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
+    %meta{ property: 'og:image', content: 'https://res.cloudinary.com/hv5cxagki/image/upload/c_scale,h_80/v1621228725/logos/btn_purple_background_uu2ere.png' }
+    %meta{ property: 'og:site_name', content: 'Escrow Demo | btn.group' }
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    -# === THEME STYLESHEETS ===
+    = stylesheet_link_tag 'application'
+    :javascript
+      global = globalThis
+    = javascript_include_tag 'application', defer: true
+  %body
+    = yield
