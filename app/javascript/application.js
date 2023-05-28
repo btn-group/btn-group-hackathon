@@ -3,6 +3,7 @@
 // IMPORTS
 import "./src/jquery";
 import * as bootstrap from "bootstrap";
+import "./src/lodash";
 import "./src/polkadotjs";
 import "./src/toastr";
 
