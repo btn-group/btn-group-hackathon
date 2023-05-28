@@ -1,5 +1,5 @@
 !!!
-%html
+%html.h-100
   %head
     %title Escrow Demo | btn.group
     %meta{ charset: 'utf-8' }
@@ -16,5 +16,10 @@
     :javascript
       global = globalThis
     = javascript_include_tag 'application', defer: true
-  %body
+  %body.h-100.d-flex.flex-column
     = yield
+    %footer.footer.mt-auto
+      .container-fluid.py-3
+        %span.text-muted.fw-semibold.me-1 2023
+        %a{ href: 'https://btn.group', target: '_blank' } btn.group
+
