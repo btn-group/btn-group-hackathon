@@ -19,18 +19,31 @@
   %body.h-100.d-flex.flex-column.polkadotjs
     %header.d-flex.container-fluid.align-items-stretch.justify-content-between.py-3
       .d-flex.align-items-center
-        .fs-5.text-white Escrow Demo
+        .fs-5 Escrow Demo
       .d-flex.align-items-stretch.justify-content-between
         .block
-          .ms-1.ms-lg-3.d-none#wallet-toggle
-            .d-flex.cursor-pointer
-              %img.user-address-alias-avatar.h-100.symbol{ alt: 'avatar', src: 'https://res.cloudinary.com/hv5cxagki/image/upload/v1636593640/branding/btn_purple_background_dh2guy.png' }
-              .ms-3
-                .account-name.fw-bolder.fs-5
-                .account-address-abbreviated.fw-semibold.text-muted.fs-6
+          .dropdown.d-none#wallet-toggle
+            #dropdownMenuButton1{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :type => "button" }
+              .d-flex{ style: 'height: 40px;' }
+                %img.user-address-alias-avatar.h-100.symbol{ alt: 'avatar', src: 'https://res.cloudinary.com/hv5cxagki/image/upload/v1636593640/branding/btn_purple_background_dh2guy.png' }
+                .align-self-center.ms-3
+                  .account-name.fw-bold
+                  .account-address-abbreviated.text-muted{ style: 'font-size: small;' }
+            %ul.dropdown-menu{"aria-labelledby" => "dropdownMenuButton1"}
+              %li
+                %a.dropdown-item{:href => "#"} Action
+              %li
+                %a.dropdown-item{:href => "#"} Another action
+              %li
+                %a.dropdown-item{:href => "#"} Something else here
+              %hr
+              %li
+                %a.dropdown-item#change-account-link{ href: '#' } Change account
+
           .ms-1.ms-lg-3
             = render 'polkadot_connect_button'
     = yield
+    = render 'polkadot_account_list'
     %footer.footer.mt-auto
       .container-fluid.py-3
         %span.text-muted.fw-semibold.me-1 2023

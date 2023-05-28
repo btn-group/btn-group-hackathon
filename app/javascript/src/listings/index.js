@@ -1,8 +1,10 @@
+import { ALEPH_ZERO } from "../aleph_zero";
+
 $(document).ready(function () {
   if ($("#listings-index").length) {
     LISTINGS_INDEX = {
-      init: () => {
-        console.log(123);
+      init: async () => {
+        await ALEPH_ZERO.activatePolkadotJsExtension();
       },
     };
 

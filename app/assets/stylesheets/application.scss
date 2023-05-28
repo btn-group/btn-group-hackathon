@@ -3,12 +3,26 @@
 
 body {
 	background: #151521;
+	color: #f8f9fa;
 
-	footer {
-		background: #1e1e2d;
+	a {
+		text-decoration: none;
 	}
 
-	header {
-		background: #1e1e2d;
+	footer, header, .modal-content, .card {
+		background: #1e1e2d !important;
+	}
+
+	ul {
+		list-style-type: none;
+		padding-left: 0;
+	}
+
+	.btn, .modal {
+		color: #f8f9fa;
+	}
+
+	.mw-fit-content {
+	  max-width: fit-content !important;
 	}
 }
