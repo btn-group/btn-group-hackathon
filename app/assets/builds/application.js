@@ -66413,6 +66413,7 @@
     apisStaging: void 0,
     apisProduction: void 0,
     extensions: void 0,
+    escrow: {},
     activatePolkadotJsExtension: async () => {
       let response = await POLKADOTJS.activatePolkadotjsExtension();
       ALEPH_ZERO.extensions = response.extensions;
@@ -66529,12 +66530,12 @@
   // src/listings/index.js
   $(document).ready(function() {
     if ($("#listings-index").length) {
-      LISTINGS_INDEX = {
+      ALEPH_ZERO.escrow.index = {
         init: async () => {
           await ALEPH_ZERO.activatePolkadotJsExtension();
         }
       };
-      LISTINGS_INDEX.init();
+      ALEPH_ZERO.escrow.index.init();
     }
   });
 

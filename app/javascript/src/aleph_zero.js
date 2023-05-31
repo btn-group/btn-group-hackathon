@@ -8,6 +8,22 @@ export const ALEPH_ZERO = {
   apisStaging: undefined,
   apisProduction: undefined,
   extensions: undefined,
+  escrow: {
+    address: undefined,
+    contract: undefined,
+    listings: {},
+    getContract: async () => {
+      if (!ALEPH_ZERO.escrow.contract) {
+        let api = await ALEPH_ZERO.api("staging");
+        ALEPH_ZERO.escrow.contract = new ContractPromise(
+          api,
+          require("../../../public/abi/az_escrow.json"),
+          ALEPH_ZERO.escrow.address
+        );
+      }
+      return ALEPH_ZERO.escrow.contract;
+    },
+  },
   activatePolkadotJsExtension: async () => {
     let response = await POLKADOTJS.activatePolkadotjsExtension();
     ALEPH_ZERO.extensions = response.extensions;
