@@ -7,6 +7,7 @@ import "./src/lodash";
 import "./src/polkadotjs";
 import "./src/toastr";
 import "./src/datatables";
+import "./src/big_number";
 
 // LISTINGS
 import "./src/listings/index";
@@ -58,4 +59,32 @@ document.enableButton = function (selector) {
   $button.prop("disabled", false);
   $button.find(".loading").addClass("d-none");
   $button.find(".ready").removeClass("d-none");
+};
+
+document.formatHumanizedNumberForSmartContract = function (
+  humanizedNumber,
+  decimals
+) {
+  if (humanizedNumber == "") {
+    humanizedNumber = "0";
+  }
+
+  return BigNumber(humanizedNumber.replace(/,/g, ""))
+    .shiftedBy(decimals)
+    .toFixed();
+};
+
+document.humanizeStringNumberFromSmartContract = function (
+  stringNumber,
+  decimals,
+  toFormatDecimals = undefined,
+  replaceCommas = false
+) {
+  let amount = BigNumber(stringNumber)
+    .shiftedBy(decimals * -1)
+    .toFormat(toFormatDecimals);
+  if (replaceCommas) {
+    amount = amount.replace(/,/g, "");
+  }
+  return amount;
 };

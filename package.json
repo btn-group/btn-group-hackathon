@@ -11,6 +11,7 @@
     "@polkadot/util": "^12.2.1",
     "@popperjs/core": "^2.11.8",
     "@scio-labs/use-inkathon": "^0.0.1-alpha.42",
+    "bignumber.js": "^9.1.1",
     "bootstrap": "^5.2.3",
     "datatables.net-bs5": "^1.13.4",
     "esbuild": "^0.14.23",
